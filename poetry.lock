@@ -1056,6 +1056,23 @@ files = [
 colorama = {version = "*", markers = "platform_system == \"Windows\""}
 
 [[package]]
+name = "cloudevents"
+version = "1.11.0"
+description = "CloudEvents Python SDK"
+optional = false
+python-versions = "*"
+files = [
+    {file = "cloudevents-1.11.0-py3-none-any.whl", hash = "sha256:77edb4f2b01f405c44ea77120c3213418dbc63d8859f98e9e85de875502b8a76"},
+    {file = "cloudevents-1.11.0.tar.gz", hash = "sha256:5be990583e99f3b08af5a709460e20b25cb169270227957a20b47a6ec8635e66"},
+]
+
+[package.dependencies]
+deprecation = ">=2.0,<3.0"
+
+[package.extras]
+pydantic = ["pydantic (>=1.0.0,<3.0)"]
+
+[[package]]
 name = "colorama"
 version = "0.4.6"
 description = "Cross-platform colored terminal text."
@@ -1288,6 +1305,20 @@ wrapt = ">=1.10,<2"
 
 [package.extras]
 dev = ["PyTest", "PyTest-Cov", "bump2version (<1)", "sphinx (<2)", "tox"]
+
+[[package]]
+name = "deprecation"
+version = "2.1.0"
+description = "A library to handle automated deprecations"
+optional = false
+python-versions = "*"
+files = [
+    {file = "deprecation-2.1.0-py2.py3-none-any.whl", hash = "sha256:a10811591210e1fb0e768a8c25517cabeabcba6f0bf96564f8ff45189f90b14a"},
+    {file = "deprecation-2.1.0.tar.gz", hash = "sha256:72b3bde64e5d778694b0cf68178aed03d15e15477116add3fb773e581f9518ff"},
+]
+
+[package.dependencies]
+packaging = "*"
 
 [[package]]
 name = "distlib"
@@ -5766,52 +5797,56 @@ jeepney = ">=0.6"
 
 [[package]]
 name = "semantic-kernel"
-version = "1.8.0"
+version = "1.16.0"
 description = "Semantic Kernel Python SDK"
 optional = false
-python-versions = "<3.13,>=3.10"
+python-versions = ">=3.10"
 files = [
-    {file = "semantic_kernel-1.8.0-py3-none-any.whl", hash = "sha256:ebbe78e3e7858840f83b07f185ae543e31465066636204949936c48ce1db8e2d"},
-    {file = "semantic_kernel-1.8.0.tar.gz", hash = "sha256:cc468f6717274d287087cebf889eed370d27fe0444bc670322f249e7e771de3d"},
+    {file = "semantic_kernel-1.16.0-py3-none-any.whl", hash = "sha256:a42394befa5ada93130b165e44777c58eef2b473f1971f1ba6283688f8095161"},
+    {file = "semantic_kernel-1.16.0.tar.gz", hash = "sha256:ff694575f5d98c4dac25297cc9e45baff84919155b387d0d00765cdbf23b1c1f"},
 ]
 
 [package.dependencies]
 aiohttp = ">=3.8,<4.0"
-defusedxml = ">=0.7.1,<0.8.0"
-jinja2 = ">=3.1.3,<4.0.0"
-nest-asyncio = ">=1.6.0,<2.0.0"
+azure-identity = ">=1.13,<2.0"
+cloudevents = ">=1.0,<2.0"
+defusedxml = ">=0.7,<1.0"
+jinja2 = ">=3.1,<4.0"
+nest-asyncio = ">=1.6,<2.0"
 numpy = [
-    {version = ">=1.25", markers = "python_version < \"3.12\""},
-    {version = ">=1.26", markers = "python_version >= \"3.12\""},
+    {version = ">=1.25.0", markers = "python_version < \"3.12\""},
+    {version = ">=1.26.0", markers = "python_version >= \"3.12\""},
 ]
-openai = ">=1.0"
+openai = ">=1.0,<2.0"
 openapi_core = ">=0.18,<0.20"
-opentelemetry-api = ">=1.24.0,<2.0.0"
-opentelemetry-sdk = ">=1.24.0,<2.0.0"
-pandas = ">=2.2.2,<3.0.0"
-prance = ">=23.6.21.0,<24.0.0.0"
-pybars4 = ">=0.9.13,<0.10.0"
-pydantic = ">=2,<3"
-pydantic-settings = ">=2,<3"
+opentelemetry-api = ">=1.24,<2.0"
+opentelemetry-sdk = ">=1.24,<2.0"
+prance = ">=23.6.21.0,<23.7.0.0"
+pybars4 = ">=0.9,<1.0"
+pydantic = ">=2.0,<2.10"
+pydantic-settings = ">=2.0,<3.0"
 
 [package.extras]
-all = ["anthropic (>=0.32.0,<0.33.0)", "azure-ai-inference (>=1.0.0b1,<2.0.0)", "azure-core (>=1.28.0,<2.0.0)", "azure-cosmos (>=4.7.0,<5.0.0)", "azure-identity (>=1.13.0,<2.0.0)", "azure-search-documents (==11.6.0b4)", "chromadb (>=0.4.13,<0.6.0)", "ipykernel (>=6.21.1,<7.0.0)", "milvus (>=2.3,<2.3.8)", "mistralai (>=0.4.1,<0.5.0)", "motor (>=3.3.2,<4.0.0)", "ollama (>=0.2.1,<0.3.0)", "pinecone-client (>=5.0.0,<6.0.0)", "psycopg[binary,pool] (>=3.2.1,<4.0.0)", "pyarrow (>=12.0.1,<18.0.0)", "pymilvus (>=2.3,<2.4.6)", "qdrant-client (>=1.9,<2.0)", "redis[hiredis] (>=5.0.7,<6.0.0)", "sentence-transformers (>=2.2.2,<3.0.0)", "torch (==2.2.2)", "transformers[torch] (>=4.28.1,<5.0.0)", "usearch (>=2.9,<3.0)", "weaviate-client (>=3.18,<5.0)"]
-anthropic = ["anthropic (>=0.32.0,<0.33.0)"]
-azure = ["azure-ai-inference (>=1.0.0b1,<2.0.0)", "azure-core (>=1.28.0,<2.0.0)", "azure-cosmos (>=4.7.0,<5.0.0)", "azure-identity (>=1.13.0,<2.0.0)", "azure-search-documents (==11.6.0b4)"]
-chromadb = ["chromadb (>=0.4.13,<0.6.0)"]
-google = ["google-cloud-aiplatform (>=1.60.0,<2.0.0)", "google-generativeai (>=0.7.2,<0.8.0)"]
-hugging-face = ["sentence-transformers (>=2.2.2,<3.0.0)", "torch (==2.2.2)", "transformers[torch] (>=4.28.1,<5.0.0)"]
-milvus = ["milvus (>=2.3,<2.3.8)", "pymilvus (>=2.3,<2.4.6)"]
-mistralai = ["mistralai (>=0.4.1,<0.5.0)"]
-mongo = ["motor (>=3.3.2,<4.0.0)"]
-notebooks = ["ipykernel (>=6.21.1,<7.0.0)"]
-ollama = ["ollama (>=0.2.1,<0.3.0)"]
-pinecone = ["pinecone-client (>=5.0.0,<6.0.0)"]
-postgres = ["psycopg[binary,pool] (>=3.2.1,<4.0.0)"]
+anthropic = ["anthropic (>=0.32,<1.0)"]
+aws = ["boto3 (>=1.28.57)"]
+azure = ["azure-ai-inference (>=1.0.0b6)", "azure-core-tracing-opentelemetry (>=1.0.0b11)", "azure-cosmos (>=4.7,<5.0)", "azure-identity (>=1.13,<2.0)", "azure-search-documents (>=11.6.0b4)"]
+chroma = ["chromadb (>=0.5,<0.6)"]
+dapr = ["dapr (>=1.14.0)", "dapr-ext-fastapi (>=1.14.0)", "flask-dapr (>=1.14.0)"]
+google = ["google-cloud-aiplatform (>=1.60,<2.0)", "google-generativeai (>=0.7,<1.0)"]
+hugging-face = ["sentence-transformers (>=2.2,<4.0)", "torch (==2.5.1)", "transformers[torch] (>=4.28,<5.0)"]
+milvus = ["milvus (>=2.3,<2.3.8)", "pymilvus (>=2.3,<2.5)"]
+mistralai = ["mistralai (>=1.2,<2.0)"]
+mongo = ["motor (>=3.3.2,<3.7.0)", "pymongo (>=4.8.0,<4.11)"]
+notebooks = ["ipykernel (>=6.29,<7.0)"]
+ollama = ["ollama (>=0.2,<1.0)"]
+onnx = ["onnxruntime-genai (>=0.4,<1.0)"]
+pandas = ["pandas (>=2.2,<3.0)"]
+pinecone = ["pinecone-client (>=5.0,<6.0)"]
+postgres = ["psycopg[binary,pool] (>=3.2,<4.0)"]
 qdrant = ["qdrant-client (>=1.9,<2.0)"]
-redis = ["redis[hiredis] (>=5.0.7,<6.0.0)", "types-redis (>=4.6.0.20240425,<5.0.0.0)"]
-usearch = ["pyarrow (>=12.0.1,<18.0.0)", "usearch (>=2.9,<3.0)"]
-weaviate = ["weaviate-client (>=3.18,<5.0)"]
+redis = ["redis[hiredis] (>=5.0,<6.0)", "redisvl (>=0.3.6)", "types-redis (>=4.6.0.20240425,<4.7.0.0)"]
+usearch = ["pyarrow (>=12.0,<19.0)", "usearch (>=2.9,<3.0)"]
+weaviate = ["weaviate-client (>=4.7,<5.0)"]
 
 [[package]]
 name = "send2trash"
@@ -7075,4 +7110,4 @@ test = ["big-O", "importlib-resources", "jaraco.functools", "jaraco.itertools", 
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "52c299835ba700eab98dc6220da9999c57cdf33ed1ae28ee2f6d9205acca286b"
+content-hash = "07ca3771de791baadae19f89cd0db0850ab019145813ed4707f67a50f366e8e3"
